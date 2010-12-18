@@ -1,4 +1,4 @@
-require 'color_block_hash'
+require 'spec_helper'
 
 describe Piet::ColorBlockHash do
 

@@ -1,4 +1,4 @@
-require 'stack'
+require 'spec_helper'
 
 describe Piet::Stack do
   describe "creating" do
