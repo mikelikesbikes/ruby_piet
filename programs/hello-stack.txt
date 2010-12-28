@@ -1,0 +1,32 @@
+CCP = current codel pos
+NCP = next codel pos
+CC = codel chooser (:left, :right)
+DP = direction pointer (:right, :down, :left, :up)
+
+Step 0: #initial state
+CCP = [0, 0], NCP = [11, 0], CC = :left, DP = :right
+[]
+
+Step 1:
+CCP = [11, 0], NCP = [12, 0], CC = :left, DP = :right
+push 72 => [72]
+
+Step 2:
+CCP = [12, 0], NCP = [19, 0], CC = :left, DP = :right
+outc 72 => []
+
+Step 3:
+CCP = [19, 0], NCP = [20, 0], CC = :left, DP = :right
+push 101 => [101]
+
+Step 4:
+CCP = [20, 0], NCP = [29, 11], CC = :right, DP = :down
+outc 101 = []
+
+Step 5:
+CCP = [29, 11], NCP = [29, 12], CC = :right, DP = :down
+push 108 = [108]
+
+Step 6:
+CCP = [29, 12], NCP = [28, 13], CC = :right, DP = :down
+dupl 108 = [108]

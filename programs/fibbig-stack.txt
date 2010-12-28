@@ -1,0 +1,10 @@
+push 10  => dp:R cc:L s:[10]
+push 10  => dp:R cc:L s:[10, 10]
+mult     => dp:D cc:R s:[100] # hits edge, CC toggles to right (chose lowermost fails), DP toggled down
+push 2   => dp:L cc:L s:[2, 100] # hits black, CC toggles to left, DP toggled down
+subt     => dp:L cc:L s:[98]
+push 1   => dp:L cc:L s:[1, 98] # find lowermost edge (DP/CC)
+dupl     => dp:L cc:L s:[1, 1, 98]
+dupl     => dp:L cc:L s:[1, 1, 1, 98]
+dupl     => dp:L cc:L s:[1, 1, 1, 1, 98]
+outn     => dp:L cc:L s:[1, 1, 1, 98]
