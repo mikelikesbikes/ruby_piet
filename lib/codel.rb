@@ -7,14 +7,18 @@ module Piet
     end
 
     def distance(codel)
-      self_pos = Colors::POSITION[self]
-      codel_pos = Colors::POSITION[codel]
+      self_pos = Color::POSITION[self]
+      codel_pos = Color::POSITION[codel]
       lightness_change = (codel_pos[0] - self_pos[0]).modulo(3)
       hue_change = (codel_pos[1] - self_pos[1]).modulo(6)
       [hue_change, lightness_change]
     end
 
-    module Colors
+    def self.from_int(i)
+      Color::MAP[i]
+    end
+
+    module Color
       def self.darken(color)
         color & MASK
       end

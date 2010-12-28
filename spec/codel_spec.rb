@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Piet::Codel do
-  include Piet::Codel::Colors
+  include Piet::Codel::Color
 
   def int_value(hex)
     hex.to_i(16)
@@ -28,6 +28,10 @@ describe Piet::Codel do
     specify { DARK_MAGENTA.color.should ==  int_value("C000C0FF") }
     specify { WHITE.color.should ==         int_value("FFFFFFFF") }
     specify { BLACK.color.should ==         int_value("000000FF") }
+  end
+
+  describe "finding codels" do
+    specify { Piet::Codel.from_int(int_value("FF0000FF")).should == RED }
   end
 
   describe "distance" do
